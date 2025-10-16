@@ -3,6 +3,9 @@ body {
   color: var(--color-text);
   margin: 0;
   padding: var(--spacing-medium);
+  font-family: "Roboto Serif", Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 header {
@@ -16,6 +19,21 @@ header {
 h1 {
   color: var(--color-accent);
   margin: 0 0 var(--spacing-medium) 0;
+  font-family: "Roboto Slab", Rockwell, "Courier Bold", serif;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "Roboto Slab", Rockwell, "Courier Bold", serif;
+  font-size: 1.75em;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: "Roboto Slab", Rockwell, "Courier Bold", serif;
+  font-size: 1.25em;
+  font-weight: 600;
 }
 
 header h1 {
@@ -48,4 +66,12 @@ header a {
 
 header a:hover {
   color: var(--color-link-inverted);
+}
+
+svg.icon {
+  display: inline;
+  height: 2em;
+  width: 2em;
+  vertical-align: top;
+  fill: currentColor;
 }
