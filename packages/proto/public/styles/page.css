@@ -2,10 +2,12 @@ body {
   background-color: var(--color-background-page);
   color: var(--color-text);
   margin: 0;
-  padding: var(--spacing-medium);
+  padding: var(--container-padding);
   font-family: "Roboto Serif", Georgia, "Times New Roman", Times, serif;
   font-size: 16px;
   font-weight: 400;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 header {
@@ -14,6 +16,11 @@ header {
   padding: var(--spacing-large);
   border-radius: var(--radius-medium);
   margin-bottom: var(--spacing-large);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-medium);
 }
 
 h1 {
@@ -38,16 +45,39 @@ h3 {
 
 header h1 {
   color: var(--color-text-header);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.logo-link {
+  color: var(--color-text-header);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+}
+
+.logo-link:hover {
+  color: var(--color-text-header);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+header nav {
+  flex-grow: 1;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  gap: var(--spacing-medium);
+  flex-wrap: wrap;
 }
 
 nav li {
-  margin: var(--spacing-small) 0;
+  margin: 0;
 }
 
 a {
@@ -74,4 +104,184 @@ svg.icon {
   width: 2em;
   vertical-align: top;
   fill: currentColor;
+}
+
+/* Page Grid Layout */
+main {
+  display: block;
+  margin-bottom: var(--spacing-large);
+}
+
+/* Homepage Hero Section */
+.hero {
+  text-align: center;
+  padding: var(--spacing-xlarge) var(--spacing-medium);
+  background: linear-gradient(135deg, var(--color-accent) 0%, rgb(46 175 46) 100%);
+  color: var(--color-text-inverted);
+  border-radius: var(--radius-medium);
+  margin-bottom: var(--spacing-xlarge);
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: var(--spacing-medium);
+  color: var(--color-text-inverted);
+}
+
+.hero p {
+  font-size: 1.25em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Feature Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-large);
+  margin-top: var(--spacing-medium);
+}
+
+.feature-card {
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-small);
+  color: var(--color-accent);
+}
+
+.feature-card a {
+  display: inline-block;
+  margin-top: var(--spacing-small);
+  font-weight: 600;
+}
+
+/* Listings Grid for multiple items */
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-large);
+  margin-top: var(--spacing-medium);
+}
+
+/* Article/Card Layout */
+article {
+  background-color: white;
+  padding: var(--spacing-medium);
+  border-radius: var(--radius-small);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-small);
+}
+
+article p {
+  margin-bottom: var(--spacing-small);
+}
+
+/* Marketplace list styling */
+.marketplace-list {
+  list-style: none;
+  padding: 0;
+}
+
+.marketplace-list li {
+  background-color: white;
+  padding: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
+  border-radius: var(--radius-small);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.marketplace-list li:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Definition List Layout (for item details) */
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--spacing-small) var(--spacing-medium);
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin: 0;
+}
+
+/* Sequence/List Layout */
+ul, ol {
+  padding-left: var(--spacing-large);
+}
+
+ul li, ol li {
+  margin-bottom: var(--spacing-small);
+}
+
+/* Section spacing */
+section {
+  margin-bottom: var(--spacing-xlarge);
+}
+
+section h2 {
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Responsive Design - Breakpoints */
+
+/* Mobile (default - above styles apply) */
+
+/* Tablet and up (min-width: 768px) */
+@media (min-width: 768px) {
+  body {
+    padding: var(--spacing-large);
+  }
+
+  header {
+    flex-wrap: nowrap;
+  }
+
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  nav ul {
+    justify-content: flex-end;
+  }
+}
+
+/* Desktop and up (min-width: 1024px) */
+@media (min-width: 1024px) {
+  body {
+    padding: var(--spacing-xlarge);
+  }
+
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
 }

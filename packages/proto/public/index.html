@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Golf App - Home</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,17 +14,97 @@
 <body>
     <header>
         <h1>
-            <svg class="icon">
-                <use href="/icons/transportation.svg#icon-golf" />
-            </svg>
-            Social Golf App
+            <a href="index.html" class="logo-link">
+                <svg class="icon">
+                    <use href="/icons/transportation.svg#icon-golf" />
+                </svg>
+                Golf @
+            </a>
         </h1>
         <nav>
             <ul>
-                <li><a href="swing-advice.html">Golf Teacher (Swing Advice)</a></li>
+                <li><a href="swing-advice.html">Swing Advice</a></li>
                 <li><a href="golf-shop.html">Golf Shop</a></li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to Golf @</h2>
+            <p>Connect with fellow golfers, improve your game, and find the best equipment deals all in one place.</p>
+        </section>
+
+        <section class="features">
+            <h2>What We Offer</h2>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <h3>
+                        <svg class="icon">
+                            <use href="/icons/transportation.svg#icon-golf" />
+                        </svg>
+                        Swing Analysis
+                    </h3>
+                    <p>Get helpful advice now for your golf swing. Upload videos and receive feedback from peers and instructors.</p>
+                    <a href="swing-advice.html">Learn More &rarr;</a>
+                </article>
+
+                <article class="feature-card">
+                    <h3>
+                        <svg class="icon">
+                            <use href="/icons/transportation.svg#icon-golf-bag" />
+                        </svg>
+                        Equipment Marketplace
+                    </h3>
+                    <p>Buy and sell golf equipment. Browse listings from other golfers or participate in auctions for premium gear.</p>
+                    <a href="marketplace.html">Browse Now &rarr;</a>
+                </article>
+
+                <article class="feature-card">
+                    <h3>
+                        <svg class="icon">
+                            <use href="/icons/transportation.svg#icon-flag" />
+                        </svg>
+                        Live Auctions
+                    </h3>
+                    <p>Bid on premium golf equipment in real-time auctions. Find great deals on clubs, balls, and accessories.</p>
+                    <a href="auctions.html">View Auctions &rarr;</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2>About Golf @</h2>
+            <p>We're a community-driven platform designed to help golfers of all skill levels improve their game and connect with others who share their passion. Whether you're looking for swing tips, shopping for new equipment, or just want to engage with the golf community, we've got you covered.</p>
+            <p>Our platform combines expert instruction, peer feedback, and a thriving marketplace to create the ultimate golf resource.</p>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? We'd love to hear from you!</p>
+            <dl>
+                <dt>Email</dt>
+                <dd><a href="mailto:support@socialgolfapp.com">support@golfatsymbol.com</a></dd>
+
+                <dt>Phone</dt>
+                <dd>(123) 123-4567</dd>
+
+                <dt>Hours</dt>
+                <dd>Monday - Friday: 9:00 AM - 6:00 PM PST</dd>
+
+                <dt>Location</dt>
+                <dd>San Luis Obispo, CA</dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="swing-advice.html">Swing Advice</a></li>
+                <li><a href="golf-shop.html">Golf Shop</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>

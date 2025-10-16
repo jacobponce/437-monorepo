@@ -23,4 +23,10 @@
   --spacing-small: 8px;
   --spacing-medium: 16px;
   --spacing-large: 24px;
+  --spacing-xlarge: 32px;
+
+  /* Grid and layout tokens */
+  --grid-gap: 16px;
+  --container-padding: 16px;
+  --max-width: 1200px;
 }
