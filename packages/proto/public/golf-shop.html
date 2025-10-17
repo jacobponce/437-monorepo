@@ -4,26 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golf Shop</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>
-        <svg class="icon">
-            <use href="/icons/transportation.svg#icon-golf-bag" />
-        </svg>
-        Golf Shop
-    </h1>
+    <header>
+        <h1>
+            <a href="index.html" class="logo-link">
+                <svg class="icon">
+                    <use href="/icons/transportation.svg#icon-golf" />
+                </svg>
+                Golf @
+            </a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="swing-advice.html">Swing Advice</a></li>
+                <li><a href="golf-shop.html">Golf Shop</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h2>Shop Categories</h2>
-    <p>Browse our golf equipment and deals:</p>
+    <main>
+        <section>
+            <h2>
+                <svg class="icon">
+                    <use href="/icons/transportation.svg#icon-golf-bag" />
+                </svg>
+                Golf Shop
+            </h2>
+            <p>Find the perfect clubs for players of all skill levels and budgets. Whether you're just starting out or looking to upgrade your game, we offer premium equipment at various price points to suit your needs.</p>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="auctions.html">Auctions</a></li>
-            <li><a href="marketplace.html">Marketplace</a></li>
-        </ul>
-    </nav>
+            <h3>Shop Categories</h3>
+            <ul class="marketplace-list">
+                <li><a href="auctions.html">Auctions</a> - Bid on premium equipment</li>
+                <li><a href="marketplace.html">Marketplace</a> - Buy and sell gear</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="auctions.html">Auctions</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
