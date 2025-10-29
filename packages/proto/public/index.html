@@ -27,6 +27,10 @@
                 <li><a href="golf-shop.html">Golf Shop</a></li>
             </ul>
         </nav>
+        <label id="dark-mode-label">
+            <input type="checkbox" autocomplete="off" />
+            Dark mode
+        </label>
     </header>
 
     <main>
@@ -106,5 +110,24 @@
             </ul>
         </nav>
     </footer>
+    <script>
+        const label = document.getElementById("dark-mode-label");
+        label.onchange = (event) => {
+            event.stopPropagation();
+            const customEvent = new CustomEvent("darkmode:toggle", {
+                bubbles: true,
+                detail: { checked: event.target.checked }
+            });
+            event.target.dispatchEvent(customEvent);
+        };
+
+        document.body.addEventListener("darkmode:toggle", (event) => {
+            if (event.detail.checked) {
+                event.currentTarget.classList.add("dark-mode");
+            } else {
+                event.currentTarget.classList.remove("dark-mode");
+            }
+        });
+    </script>
 </body>
 </html>
