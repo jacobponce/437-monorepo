@@ -3,6 +3,7 @@ node_modules/
 
 # Build outputs
 dist/
+!packages/proto/dist/
 build/
 
 # Environment variables
