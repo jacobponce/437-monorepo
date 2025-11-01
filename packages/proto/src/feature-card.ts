@@ -28,7 +28,7 @@ export class FeatureCardElement extends LitElement {
     reset.styles,
     css`
       article {
-        background-color: white;
+        background-color: var(--color-background-card);
         padding: var(--spacing-medium);
         border-radius: var(--radius-small);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

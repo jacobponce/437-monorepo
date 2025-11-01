@@ -5,6 +5,7 @@
 
   --color-background-page: rgb(245 245 245);
   --color-background-header: rgb(34 139 34);
+  --color-background-card: rgb(255 255 255);
 
   --color-text: rgb(51 51 51);
   --color-text-inverted: rgb(255 255 255);
@@ -14,15 +15,18 @@
   --color-link-inverted: rgb(255 255 255);
   --color-link-hover: rgb(46 175 46);
 
+  /* Border radius tokens for a rounded border */
   --radius-small: 8px;
   --radius-medium: 12px;
   --radius-large: 16px;
 
+  /* Spacing tokens for DRY */
   --spacing-small: 8px;
   --spacing-medium: 16px;
   --spacing-large: 24px;
   --spacing-xlarge: 32px;
 
+  /* Grid and layout tokens */
   --grid-gap: 16px;
   --container-padding: 16px;
   --max-width: 1200px;
@@ -31,6 +35,7 @@
 body.dark-mode {
   --color-background-page: rgb(30 30 30);
   --color-background-header: rgb(20 20 20);
+  --color-background-card: rgb(50 50 50);
   --color-text: rgb(240 240 240);
   --color-accent: rgb(46 175 46);
   --color-link: rgb(46 175 46);

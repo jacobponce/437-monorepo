@@ -106,13 +106,11 @@ svg.icon {
   fill: currentColor;
 }
 
-/* Page Grid Layout */
 main {
   display: block;
   margin-bottom: var(--spacing-large);
 }
 
-/* Homepage Hero Section */
 .hero {
   text-align: center;
   padding: var(--spacing-xlarge) var(--spacing-medium);
@@ -176,7 +174,7 @@ main {
 
 /* Article/Card Layout */
 article {
-  background-color: white;
+  background-color: var(--color-background-card);
   padding: var(--spacing-medium);
   border-radius: var(--radius-small);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -198,7 +196,7 @@ article p {
 }
 
 .marketplace-list li {
-  background-color: white;
+  background-color: var(--color-background-card);
   padding: var(--spacing-medium);
   margin-bottom: var(--spacing-medium);
   border-radius: var(--radius-small);
@@ -244,11 +242,6 @@ section h2 {
   margin-bottom: var(--spacing-medium);
 }
 
-/* Responsive Design - Breakpoints */
-
-/* Mobile (default - above styles apply) */
-
-/* Tablet and up (min-width: 768px) */
 @media (min-width: 768px) {
   body {
     padding: var(--spacing-large);
