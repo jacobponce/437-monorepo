@@ -1,0 +1,23 @@
+[
+  {
+    "icon": "icon-golf",
+    "href": "swing-advice.html",
+    "title": "Swing Analysis",
+    "description": "Get helpful advice now for your golf swing. Upload videos and receive feedback from peers and instructors.",
+    "linkText": "Learn More →"
+  },
+  {
+    "icon": "icon-golf-bag",
+    "href": "marketplace.html",
+    "title": "Equipment Marketplace",
+    "description": "Buy and sell golf equipment. Browse listings from other golfers or participate in auctions for premium gear.",
+    "linkText": "Browse Now →"
+  },
+  {
+    "icon": "icon-flag",
+    "href": "auctions.html",
+    "title": "Live Auctions",
+    "description": "Bid on premium golf equipment in real-time auctions. Find great deals on clubs, balls, and accessories.",
+    "linkText": "View Auctions →"
+  }
+]
