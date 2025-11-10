@@ -41,40 +41,7 @@
 
         <section class="features">
             <h2>What We Offer</h2>
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <h3>
-                        <svg class="icon">
-                            <use href="/icons/transportation.svg#icon-golf" />
-                        </svg>
-                        Swing Analysis
-                    </h3>
-                    <p>Get helpful advice now for your golf swing. Upload videos and receive feedback from peers and instructors.</p>
-                    <a href="swing-advice.html">Learn More &rarr;</a>
-                </article>
-
-                <article class="feature-card">
-                    <h3>
-                        <svg class="icon">
-                            <use href="/icons/transportation.svg#icon-golf-bag" />
-                        </svg>
-                        Equipment Marketplace
-                    </h3>
-                    <p>Buy and sell golf equipment. Browse listings from other golfers or participate in auctions for premium gear.</p>
-                    <a href="marketplace.html">Browse Now &rarr;</a>
-                </article>
-
-                <article class="feature-card">
-                    <h3>
-                        <svg class="icon">
-                            <use href="/icons/transportation.svg#icon-flag" />
-                        </svg>
-                        Live Auctions
-                    </h3>
-                    <p>Bid on premium golf equipment in real-time auctions. Find great deals on clubs, balls, and accessories.</p>
-                    <a href="auctions.html">View Auctions &rarr;</a>
-                </article>
-            </div>
+            <golf-feature-grid src="http://localhost:3000/features"></golf-feature-grid>
         </section>
 
         <section class="about">
@@ -110,6 +77,8 @@
             </ul>
         </nav>
     </footer>
+    <script type="module" src="/scripts/feature-card.js"></script>
+    <script type="module" src="/scripts/feature-grid.js"></script>
     <script>
         const label = document.getElementById("dark-mode-label");
         label.onchange = (event) => {
