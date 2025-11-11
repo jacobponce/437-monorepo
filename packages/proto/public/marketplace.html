@@ -10,8 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <script type="module" src="../src/pages/marketplace.ts"></script>
 </head>
 <body>
+    <mu-auth provides="golf:auth">
     <header>
         <h1>
             <a href="index.html" class="logo-link">
@@ -37,16 +39,8 @@
                 </svg>
                 Marketplace - Golf Equipment
             </h2>
-            <ul class="marketplace-list">
-                <li>
-                    <a href="marketplace-item.html">PXG Driver</a> - $899.99 - Like New
-                </li>
-                <li>
-                    <a href="marketplace-item2.html">TaylorMade P770 Irons (5-PW)</a> - $1149.00 - Used
-                </li>
-                <li>
-                    <a href="marketplace-item3.html">Scotty Cameron Putter</a> - $350.00 - Excellent Condition
-                </li>
+            <ul class="marketplace-list" id="listings">
+                <li>Loading...</li>
             </ul>
         </section>
     </main>
@@ -60,5 +54,6 @@
             </ul>
         </nav>
     </footer>
+    </mu-auth>
 </body>
 </html>

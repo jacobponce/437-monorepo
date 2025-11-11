@@ -77,26 +77,6 @@
             </ul>
         </nav>
     </footer>
-    <script type="module" src="/scripts/feature-card.js"></script>
-    <script type="module" src="/scripts/feature-grid.js"></script>
-    <script>
-        const label = document.getElementById("dark-mode-label");
-        label.onchange = (event) => {
-            event.stopPropagation();
-            const customEvent = new CustomEvent("darkmode:toggle", {
-                bubbles: true,
-                detail: { checked: event.target.checked }
-            });
-            event.target.dispatchEvent(customEvent);
-        };
-
-        document.body.addEventListener("darkmode:toggle", (event) => {
-            if (event.detail.checked) {
-                event.currentTarget.classList.add("dark-mode");
-            } else {
-                event.currentTarget.classList.remove("dark-mode");
-            }
-        });
-    </script>
+    <script type="module" src="../src/pages/index.ts"></script>
 </body>
 </html>
