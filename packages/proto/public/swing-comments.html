@@ -7,39 +7,87 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
-    <script type="module" src="../src/components.ts"></script>
+    <script type="module" src="../src/pages/swing-comments.ts"></script>
+    <style>
+        .header-with-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-large, 2rem);
+        }
+
+        .header-with-button h1 {
+            margin: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--radius-medium, 4px);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent, #4CAF50);
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        #comment-form-section {
+            display: none;
+            margin-bottom: var(--spacing-large, 2rem);
+        }
+
+        #comment-form-section.show {
+            display: block;
+        }
+
+        .comments-list {
+            margin-top: var(--spacing-large, 2rem);
+        }
+
+        article {
+            margin-bottom: var(--spacing-medium, 1rem);
+        }
+    </style>
 </head>
 <body>
     <mu-auth provides="golf:auth">
     <app-header></app-header>
 
-    <h1>Advice Comment Thread</h1>
+    <main>
+        <div class="header-with-button">
+            <h1>Advice Comment Thread</h1>
+            <button id="add-comment-btn" class="btn btn-primary">+ Add Comment</button>
+        </div>
 
-    <h2>Recent Comments</h2>
-    <article>
-        <h3>gumyunmunyun</h3>
-        <p>Posted: October 7, 2025</p>
-        <p>Hit a flop shot out of the sand works for me</p>
-    </article>
+        <section id="comment-form-section">
+            <h2>Post a Comment</h2>
+            <comment-form></comment-form>
+        </section>
 
-    <article>
-        <h3>bronny</h3>
-        <p>Posted: October 6, 2025</p>
-        <p>Does anyone have advice for hitting out of sand?</p>
-    </article>
+        <section class="comments-list">
+            <h2>Recent Comments</h2>
+            <div id="comments-container">
+                <p>Loading comments...</p>
+            </div>
+        </section>
 
-    <article>
-        <h3>Tiger Woods</h3>
-        <p>Posted: October 9, 2025</p>
-        <p>The tempo drill is great for beginners. I teach this to all.</p>
-    </article>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="swing-advice.html">Back to Swing Advice</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="swing-advice.html">Back to Swing Advice</a></li>
+            </ul>
+        </nav>
+    </main>
     </mu-auth>
 </body>
 </html>

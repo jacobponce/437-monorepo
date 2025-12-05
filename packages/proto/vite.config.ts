@@ -25,5 +25,17 @@ export default defineConfig({
     },
     outDir: "../dist"
   },
-  root: "public"
+  root: "public",
+  server: {
+    proxy: {
+      "/auth": {
+        target: "http://localhost:3000",
+        changeOrigin: true
+      },
+      "/api": {
+        target: "http://localhost:3000",
+        changeOrigin: true
+      }
+    }
+  }
 });

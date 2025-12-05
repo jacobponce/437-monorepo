@@ -38,14 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const signoutBtn = document.getElementById("signout-btn");
   if (signoutBtn) {
     signoutBtn.addEventListener("click", () => {
+      localStorage.clear();
+
       const event = new CustomEvent("auth:message", {
         bubbles: true,
         composed: true,
         detail: ["auth/signout"]
       });
-      document.body.dispatchEvent(event);
+      document.dispatchEvent(event);
 
-      window.location.href = "/login.html";
+      window.location.href = "/index.html";
     });
   }
 });
