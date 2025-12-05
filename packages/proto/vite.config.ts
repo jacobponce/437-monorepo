@@ -7,6 +7,10 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "public/index.html"),
         login: resolve(__dirname, "public/login.html"),
+        register: resolve(__dirname, "public/register.html"),
+        account: resolve(__dirname, "public/account.html"),
+        createListing: resolve(__dirname, "public/create-listing.html"),
+        createAuction: resolve(__dirname, "public/create-auction.html"),
         marketplace: resolve(__dirname, "public/marketplace.html"),
         shop: resolve(__dirname, "public/golf-shop.html"),
         advice: resolve(__dirname, "public/swing-advice.html"),

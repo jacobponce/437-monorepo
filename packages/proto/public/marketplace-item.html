@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
+    <script type="module" src="../src/components.ts"></script>
 </head>
 <body>
+    <mu-auth provides="golf:auth">
+    <app-header></app-header>
+
     <h1>PXG Driver</h1>
 
     <dl>
@@ -40,5 +44,6 @@
     <nav>
         <a href="marketplace.html">Back to Marketplace</a>
     </nav>
+    </mu-auth>
 </body>
 </html>

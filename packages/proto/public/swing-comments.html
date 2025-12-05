@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
+    <script type="module" src="../src/components.ts"></script>
 </head>
 <body>
+    <mu-auth provides="golf:auth">
+    <app-header></app-header>
+
     <h1>Advice Comment Thread</h1>
 
     <h2>Recent Comments</h2>
@@ -36,5 +40,6 @@
             <li><a href="swing-advice.html">Back to Swing Advice</a></li>
         </ul>
     </nav>
+    </mu-auth>
 </body>
 </html>

@@ -1,4 +1,5 @@
 import { define, Auth, Observer } from "@calpoly/mustang";
+import "../components";
 
 define({ "mu-auth": Auth.Provider });
 

@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
+    <script type="module" src="../src/components.ts"></script>
 </head>
 <body>
+    <mu-auth provides="golf:auth">
+    <app-header></app-header>
     <h1>
         <svg class="icon">
             <use href="/icons/transportation.svg#icon-golf" />
@@ -22,12 +25,12 @@
             <a href="video.html">October Swing</a>
         </li>
     </ul>
-
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="swing-advice.html">Back to Swing Advice</a></li>
         </ul>
     </nav>
+    </mu-auth>
 </body>
 </html>

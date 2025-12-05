@@ -7,36 +7,35 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/tokens.css" />
     <link rel="stylesheet" href="/styles/page.css" />
+    <script type="module" src="../src/components.ts"></script>
 </head>
 <body>
+    <mu-auth provides="golf:auth">
+    <app-header></app-header>
     <h1>My Swing October</h1>
-
     <dl>
         <dt>Player</dt>
         <dd>Me (Insert Video Later)</dd>
     </dl>
-
     <h2>Comments</h2>
     <article>
         <h3>gumyunmunyun</h3>
         <p>Posted: October 1, 2025</p>
         <p>This really helped! Fixed my slice in one range session.</p>
     </article>
-
     <article>
         <h3>CollinMorikawa</h3>
         <p>Posted: October 3, 2025</p>
         <p>Your swing is ight. Looks like a slice swing tho. Change ur setup to be better</p>
     </article>
-
     <article>
         <h3>BrysonDechambino</h3>
         <p>Posted: October 5, 2025</p>
         <p>Can you do a video of putting?</p>
     </article>
-
     <nav>
         <a href="swing-videos.html">Back to Videos</a>
     </nav>
+    </mu-auth>
 </body>
 </html>
