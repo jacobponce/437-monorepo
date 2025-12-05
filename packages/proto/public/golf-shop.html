@@ -10,33 +10,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <script type="module" src="../src/components.ts"></script>
 </head>
 <body>
-    <header>
-        <h1>
-            <a href="index.html" class="logo-link">
-                <svg class="icon">
-                    <use href="/icons/transportation.svg#icon-golf" />
-                </svg>
-                Golf @
-            </a>
-        </h1>
-        <nav>
-            <ul>
-                <li><a href="swing-advice.html">Swing Advice</a></li>
-                <li><a href="golf-shop.html">Golf Shop</a></li>
-            </ul>
-        </nav>
-    </header>
+    <mu-auth provides="golf:auth">
+    <app-header></app-header>
 
     <main>
         <section>
-            <h2>
-                <svg class="icon">
-                    <use href="/icons/transportation.svg#icon-golf-bag" />
-                </svg>
-                Golf Shop
-            </h2>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-large, 2rem);">
+                <h2 style="margin: 0;">
+                    <svg class="icon">
+                        <use href="/icons/transportation.svg#icon-golf-bag" />
+                    </svg>
+                    Golf Shop
+                </h2>
+                <a href="create-listing.html" class="btn btn-primary" style="text-decoration: none; padding: 0.75rem 1.5rem; background-color: var(--color-accent, #4CAF50); color: white; border-radius: var(--radius-medium, 4px); font-weight: 500;">
+                    + Create New Listing
+                </a>
+            </div>
             <p>Find the perfect clubs for players of all skill levels and budgets. Whether you're just starting out or looking to upgrade your game, we offer premium equipment at various price points to suit your needs.</p>
 
             <h3>Shop Categories</h3>
@@ -56,5 +48,6 @@
             </ul>
         </nav>
     </footer>
+    </mu-auth>
 </body>
 </html>

@@ -10,57 +10,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <script type="module" src="../src/pages/auctions.ts"></script>
 </head>
 <body>
-    <header>
-        <h1>
-            <a href="index.html" class="logo-link">
-                <svg class="icon">
-                    <use href="/icons/transportation.svg#icon-golf" />
-                </svg>
-                Golf @
-            </a>
-        </h1>
-        <nav>
-            <ul>
-                <li><a href="swing-advice.html">Swing Advice</a></li>
-                <li><a href="golf-shop.html">Golf Shop</a></li>
-            </ul>
-        </nav>
-    </header>
+    <mu-auth provides="golf:auth">
+    <app-header></app-header>
 
     <main>
         <section>
-            <h2>
-                <svg class="icon">
-                    <use href="/icons/transportation.svg#icon-flag" />
-                </svg>
-                Active Auctions
-            </h2>
-            <div class="listings-grid">
-                <article>
-                    <h3>Taylormade TP5x (12pc)</h3>
-                    <dl>
-                        <dt>Current Bid</dt>
-                        <dd>$55.00</dd>
-                        <dt>Time Remaining</dt>
-                        <dd>3 days, 5 hours</dd>
-                        <dt>Bids</dt>
-                        <dd>8</dd>
-                    </dl>
-                </article>
-
-                <article>
-                    <h3>Taylormade SIM 3-Wood</h3>
-                    <dl>
-                        <dt>Current Bid</dt>
-                        <dd>$280.00</dd>
-                        <dt>Time Remaining</dt>
-                        <dd>1 day, 12 hours</dd>
-                        <dt>Bids</dt>
-                        <dd>20</dd>
-                    </dl>
-                </article>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-large, 2rem);">
+                <h2 style="margin: 0;">
+                    <svg class="icon">
+                        <use href="/icons/transportation.svg#icon-flag" />
+                    </svg>
+                    Active Auctions
+                </h2>
+                <a href="create-auction.html" class="btn btn-primary" style="text-decoration: none; padding: 0.75rem 1.5rem; background-color: var(--color-accent, #4CAF50); color: white; border-radius: var(--radius-medium, 4px); font-weight: 500;">
+                    + Create New Auction
+                </a>
+            </div>
+            <div class="listings-grid" id="auctions-grid">
+                <p style="grid-column: 1/-1; text-align: center;">Loading auctions...</p>
             </div>
         </section>
     </main>
@@ -74,5 +44,6 @@
             </ul>
         </nav>
     </footer>
+    </mu-auth>
 </body>
 </html>

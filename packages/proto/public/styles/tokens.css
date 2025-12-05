@@ -34,7 +34,7 @@
 
 body.dark-mode {
   --color-background-page: rgb(30 30 30);
-  --color-background-header: rgb(20 20 20);
+  --color-background-header: rgb(50 50 50);
   --color-background-card: rgb(50 50 50);
   --color-text: rgb(240 240 240);
   --color-accent: rgb(46 175 46);

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Golf @</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <script type="module" src="../src/pages/account.ts"></script>
+    <style>
+        .account-info {
+            background: var(--color-background-card, white);
+            padding: var(--spacing-large, 2rem);
+            border-radius: var(--radius-large, 8px);
+            margin-bottom: var(--spacing-large, 2rem);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .account-info p {
+            margin-bottom: var(--spacing-small, 0.5rem);
+        }
+
+        .account-actions {
+            background: var(--color-background-card, white);
+            padding: var(--spacing-large, 2rem);
+            border-radius: var(--radius-large, 8px);
+            margin-bottom: var(--spacing-large, 2rem);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .action-list li {
+            margin-bottom: var(--spacing-medium, 1rem);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--radius-medium, 4px);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent, #4CAF50);
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: #d32f2f;
+            color: white;
+        }
+
+        .danger-zone {
+            background: var(--color-background-card, white);
+            padding: var(--spacing-large, 2rem);
+            border-radius: var(--radius-large, 8px);
+            border: 2px solid #d32f2f;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <mu-auth provides="golf:auth">
+    <app-header></app-header>
+
+    <main>
+        <section>
+            <h2>My Account</h2>
+            <div class="account-info">
+                <p><strong>Username:</strong> <span id="username">Loading...</span></p>
+                <p><strong>Member Since:</strong> <span id="member-since">Loading...</span></p>
+            </div>
+
+            <div class="account-actions">
+                <h3>Quick Actions</h3>
+                <ul class="action-list">
+                    <li><a href="create-listing.html" class="btn btn-primary">Create New Listing</a></li>
+                    <li><a href="marketplace.html" class="btn">View Marketplace</a></li>
+                </ul>
+            </div>
+
+            <div class="danger-zone">
+                <h3>Account Settings</h3>
+                <button id="signout-btn" class="btn btn-danger">Sign Out</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+            </ul>
+        </nav>
+    </footer>
+    </mu-auth>
+</body>
+</html>
