@@ -38,19 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const signoutBtn = document.getElementById("signout-btn");
   if (signoutBtn) {
     signoutBtn.addEventListener("click", () => {
-      // Clear the token from localStorage
-      localStorage.removeItem("token");
+      localStorage.clear();
 
-      // Dispatch signout event
       const event = new CustomEvent("auth:message", {
         bubbles: true,
         composed: true,
         detail: ["auth/signout"]
       });
-      document.body.dispatchEvent(event);
+      document.dispatchEvent(event);
 
-      // Redirect to login page
-      window.location.href = "/login.html";
+      window.location.href = "/index.html";
     });
   }
 });
