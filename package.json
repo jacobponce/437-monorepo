@@ -6,6 +6,11 @@
     "packages/*"
   ],
   "scripts": {
-    "proto:start": "npm -w proto start"
+    "proto:start": "npm -w proto start",
+    "proto:dev": "npm -w proto run dev",
+    "proto:build": "npm -w proto run build",
+    "server:dev": "npm -w server run dev",
+    "server:start": "npm -w server start",
+    "start": "npm run proto:build && npm -w server run start:proto"
   }
 }
