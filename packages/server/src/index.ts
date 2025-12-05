@@ -3,6 +3,7 @@ import { connect } from "./services/mongo";
 import FeatureCards from "./services/feature-card-svc";
 import clubListings from "./routes/club-listings";
 import auctions from "./routes/auctions";
+import comments from "./routes/comments";
 import auth, { authenticateUser } from "./routes/auth";
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/auth", auth);
 app.use("/api/club-listings", authenticateUser, clubListings);
 app.use("/api/auctions", authenticateUser, auctions);
+app.use("/api/comments", comments);
 
 app.get("/hello", (req: Request, res: Response) => {
   res.send("Hello, World");
