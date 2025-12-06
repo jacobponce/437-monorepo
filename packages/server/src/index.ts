@@ -5,6 +5,8 @@ import clubListings from "./routes/club-listings";
 import auctions from "./routes/auctions";
 import comments from "./routes/comments";
 import auth, { authenticateUser } from "./routes/auth";
+import fs from "node:fs/promises";
+import path from "path";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -44,6 +46,13 @@ app.get("/features/:id", (req: Request, res: Response) => {
       res.status(404).send();
     }
   });
+});
+
+app.use("/app", (req: Request, res: Response) => {
+  const indexHtml = path.resolve(staticDir, "index.html");
+  fs.readFile(indexHtml, { encoding: "utf8" }).then((html) =>
+    res.send(html)
+  );
 });
 
 app.listen(port, () => {

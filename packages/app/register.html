@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sign Up - Golf @</title>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/tokens.css" />
+  <link rel="stylesheet" href="/styles/page.css" />
+  <script type="module" src="/src/pages/register.ts"></script>
+</head>
+<body class="page">
+  <mu-auth provides="golf:auth">
+    <app-header></app-header>
+    <h2>Sign Up</h2>
+    <main class="card">
+      <login-form api="/auth/register">
+        <label>
+          <span>Username:</span>
+          <input name="username" autocomplete="off" />
+        </label>
+        <label>
+          <span>Password:</span>
+          <input type="password" name="password" />
+        </label>
+        <button slot="button" type="submit">Sign Up</button>
+      </login-form>
+    </main>
+    <p>Already have an account? <a href="/login.html">Log in here</a>.</p>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/app">Home</a></li>
+          <li><a href="/app/shop">Golf Shop</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </mu-auth>
+</body>
+</html>
