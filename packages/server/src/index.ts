@@ -4,6 +4,7 @@ import FeatureCards from "./services/feature-card-svc";
 import clubListings from "./routes/club-listings";
 import auctions from "./routes/auctions";
 import comments from "./routes/comments";
+import credentials from "./routes/credentials";
 import auth, { authenticateUser } from "./routes/auth";
 import fs from "node:fs/promises";
 import path from "path";
@@ -18,6 +19,7 @@ app.use(express.static(staticDir));
 app.use(express.json());
 
 app.use("/auth", auth);
+app.use("/api/credentials", authenticateUser, credentials);
 app.use("/api/club-listings", authenticateUser, clubListings);
 app.use("/api/auctions", authenticateUser, auctions);
 app.use("/api/comments", comments);

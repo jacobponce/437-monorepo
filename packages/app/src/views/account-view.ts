@@ -1,38 +1,39 @@
-import { css, html, LitElement } from "lit";
+import { css, html } from "lit";
 import { state } from "lit/decorators.js";
-import { Auth, Observer } from "@calpoly/mustang";
+import { Auth, Observer, View } from "@calpoly/mustang";
+import { Msg } from "../messages";
+import { Model } from "../model";
+import { Credential } from "server/models";
 
-export class AccountViewElement extends LitElement {
+export class AccountViewElement extends View<Model, Msg> {
   @state()
-  private user?: { username: string; email?: string };
+  get credential(): Credential | undefined {
+    return this.model.credential;
+  }
 
-  private _authObserver?: Observer<Auth.Model>;
+  private _authObserver = new Observer<Auth.Model>(this, "golf:auth");
+
+  constructor() {
+    super("golf:model");
+  }
 
   connectedCallback() {
     super.connectedCallback();
-
-    this._authObserver = new Observer<Auth.Model>(
-      this,
-      "golf:auth"
-    );
-
-    this._authObserver.observe(({ user }) => {
+    this._authObserver.observe(({ user }: Auth.Model) => {
       if (user && user.authenticated) {
-        this.user = {
-          username: user.username,
-          email: (user as any).email
-        };
-      } else {
-        this.user = undefined;
+        this.dispatchMessage([
+          "credential/request",
+          { username: user.username }
+        ]);
       }
     });
   }
 
   render() {
-    if (!this.user) {
+    if (!this.credential) {
       return html`
         <main>
-          <p>Please log in to view your account.</p>
+          <p>Loading account information...</p>
         </main>
       `;
     }
@@ -42,11 +43,7 @@ export class AccountViewElement extends LitElement {
         <h1>My Account</h1>
         <dl>
           <dt>Username</dt>
-          <dd>${this.user.username}</dd>
-          ${this.user.email ? html`
-            <dt>Email</dt>
-            <dd>${this.user.email}</dd>
-          ` : ""}
+          <dd>${this.credential.username}</dd>
         </dl>
       </main>
     `;

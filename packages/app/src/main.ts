@@ -2,9 +2,13 @@ import {
   Auth,
   define,
   History,
+  Store,
   Switch
 } from "@calpoly/mustang";
 import { html } from "lit";
+import { Msg } from "./messages";
+import { Model, init } from "./model";
+import update from "./update";
 import { AppHeaderElement } from "./components/app-header";
 import { FeatureCardElement } from "./components/feature-card";
 import { FeatureGridElement } from "./components/feature-grid";
@@ -86,6 +90,11 @@ const routes = [
 define({
   "mu-auth": Auth.Provider,
   "mu-history": History.Provider,
+  "mu-store": class AppStore extends Store.Provider<Model, Msg> {
+    constructor() {
+      super(update, init, "golf:auth");
+    }
+  },
   "mu-switch": class AppSwitch extends Switch.Element {
     constructor() {
       super(routes, "golf:history", "golf:auth");

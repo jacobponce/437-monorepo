@@ -15,10 +15,12 @@
 <body>
     <mu-history provides="golf:history">
         <mu-auth provides="golf:auth" redirect="/login.html">
-            <article class="page">
-                <app-header></app-header>
-                <mu-switch></mu-switch>
-            </article>
+            <mu-store provides="golf:model">
+                <article class="page">
+                    <app-header></app-header>
+                    <mu-switch></mu-switch>
+                </article>
+            </mu-store>
         </mu-auth>
     </mu-history>
 </body>
