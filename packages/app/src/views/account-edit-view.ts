@@ -79,11 +79,9 @@ export class AccountEditViewElement extends View<Model, Msg> {
       {
         onSuccess: () => {
           if (usernameChanged) {
-            alert("Username changed. Please login again with your new username.");
             Auth.dispatch(this, "auth/signout");
             History.dispatch(this, "history/navigate", { href: "/app/login.html" });
           } else {
-            alert("Password updated successfully!");
             History.dispatch(this, "history/navigate", { href: "/app/account" });
           }
         },
