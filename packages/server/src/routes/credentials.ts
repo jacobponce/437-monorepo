@@ -1,21 +1,22 @@
 import express, { Request, Response } from "express";
 import { Credential } from "../models/credential";
+import Credentials from "../services/credential-svc";
 
 const router = express.Router();
 
-const credentials: Record<string, Credential> = {
-  testuser: { username: "testuser", hashedPassword: "hashed_password_123" }
-};
-
 router.get("/:username", (req: Request, res: Response) => {
   const { username } = req.params;
-  const credential = credentials[username];
+  Credentials.get(username)
+    .then((credential: Credential) => res.json(credential))
+    .catch((err) => res.status(404).send(err));
+});
 
-  if (credential) {
-    res.json(credential);
-  } else {
-    res.status(404).json({ error: "Credential not found" });
-  }
+router.put("/:username", (req: Request, res: Response) => {
+  const { username } = req.params;
+  const updatedCredential = req.body;
+  Credentials.update(username, updatedCredential)
+    .then((credential: Credential) => res.json(credential))
+    .catch((err) => res.status(404).send(err));
 });
 
 export default router;

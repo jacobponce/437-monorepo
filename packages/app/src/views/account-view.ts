@@ -45,6 +45,9 @@ export class AccountViewElement extends View<Model, Msg> {
           <dt>Username</dt>
           <dd>${this.credential.username}</dd>
         </dl>
+        <a href="/app/account/edit">
+          <button>Edit</button>
+        </a>
       </main>
     `;
   }
@@ -81,6 +84,27 @@ export class AccountViewElement extends View<Model, Msg> {
 
     dd {
       margin: 0;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: var(--spacing-large);
+      text-decoration: none;
+    }
+
+    button {
+      padding: var(--spacing-medium);
+      background-color: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius-small);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    button:hover {
+      opacity: 0.9;
     }
   `;
 }
