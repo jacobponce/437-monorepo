@@ -65,4 +65,18 @@ function verify(username: string, password: string): Promise<string> {
       );
 }
 
-export default { create, verify };
+function get(username: string): Promise<Credential> {
+  return credentialModel.findOne({ username }).then((creds) => {
+    if (!creds) throw `${username} not found`;
+    return creds;
+  });
+}
+
+function update(username: string, credential: Credential): Promise<Credential> {
+  return credentialModel.findOneAndUpdate({ username }, credential, { new: true }).then((updated) => {
+    if (!updated) throw `${username} not updated`;
+    return updated;
+  });
+}
+
+export default { create, verify, get, update };

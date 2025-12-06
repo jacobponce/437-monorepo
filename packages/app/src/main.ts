@@ -27,6 +27,7 @@ import { SwingVideosViewElement } from "./views/swing-videos-view";
 import { VideoViewElement } from "./views/video-view";
 import { SwingCommentsViewElement } from "./views/swing-comments-view";
 import { AccountViewElement } from "./views/account-view";
+import { AccountEditViewElement } from "./views/account-edit-view";
 
 const routes = [
   {
@@ -82,6 +83,10 @@ const routes = [
     view: () => html`<account-view></account-view>`
   },
   {
+    path: "/app/account/edit",
+    view: () => html`<account-edit-view></account-edit-view>`
+  },
+  {
     path: "/",
     redirect: "/app"
   }
@@ -116,5 +121,6 @@ define({
   "swing-videos-view": SwingVideosViewElement,
   "video-view": VideoViewElement,
   "swing-comments-view": SwingCommentsViewElement,
-  "account-view": AccountViewElement
+  "account-view": AccountViewElement,
+  "account-edit-view": AccountEditViewElement
 });
