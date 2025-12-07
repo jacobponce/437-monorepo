@@ -83,7 +83,10 @@ export class AppHeaderElement extends LitElement {
                 <a href="/app/account" class="username-link">Hi, ${this.user.username}!</a>
               `
             : html`
-                <a href="/login.html" class="login-link">Sign In</a>
+                <a href="/login.html" class="login-link" @click=${(e: Event) => {
+                  e.preventDefault();
+                  window.location.href = "/login.html";
+                }}>Sign In</a>
               `}
         </div>
         <label>
