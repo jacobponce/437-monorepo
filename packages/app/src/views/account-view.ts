@@ -29,6 +29,15 @@ export class AccountViewElement extends View<Model, Msg> {
     });
   }
 
+  private _handleSignout() {
+    const event = new CustomEvent("auth:message", {
+      bubbles: true,
+      composed: true,
+      detail: ["auth/signout"]
+    });
+    this.dispatchEvent(event);
+  }
+
   render() {
     if (!this.credential) {
       return html`
@@ -45,9 +54,14 @@ export class AccountViewElement extends View<Model, Msg> {
           <dt>Username</dt>
           <dd>${this.credential.username}</dd>
         </dl>
-        <a href="/app/account/edit">
-          <button>Edit</button>
-        </a>
+        <div class="actions">
+          <a href="/app/account/edit">
+            <button>Edit</button>
+          </a>
+          <button class="signout-btn" @click=${this._handleSignout}>
+            Sign Out
+          </button>
+        </div>
       </main>
     `;
   }
@@ -86,9 +100,13 @@ export class AccountViewElement extends View<Model, Msg> {
       margin: 0;
     }
 
-    a {
-      display: inline-block;
+    .actions {
+      display: flex;
+      gap: var(--spacing-medium);
       margin-top: var(--spacing-large);
+    }
+
+    a {
       text-decoration: none;
     }
 
@@ -105,6 +123,10 @@ export class AccountViewElement extends View<Model, Msg> {
 
     button:hover {
       opacity: 0.9;
+    }
+
+    button.signout-btn {
+      background-color: #d32f2f;
     }
   `;
 }

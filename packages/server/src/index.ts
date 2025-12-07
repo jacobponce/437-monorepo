@@ -11,7 +11,7 @@ import path from "path";
 
 const app = express();
 const port = process.env.PORT || 3000;
-const staticDir = process.env.STATIC || "../proto/dist";
+const staticDir = process.env.STATIC || "../app/dist";
 
 connect("golf_features");
 

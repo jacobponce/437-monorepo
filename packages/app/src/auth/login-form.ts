@@ -25,16 +25,20 @@ export class LoginFormElement extends LitElement {
     );
   }
 
+  get buttonText(): string {
+    return this.api?.includes("/register") ? "Sign Up" : "Login";
+  }
+
   override render() {
     return html`
       <form
-        @change=${(e: InputEvent) => this.handleChange(e)}
+        @input=${(e: InputEvent) => this.handleChange(e)}
         @submit=${(e: SubmitEvent) => this.handleSubmit(e)}
       >
         <slot></slot>
         <slot name="button">
           <button ?disabled=${!this.canSubmit} type="submit">
-            Login
+            ${this.buttonText}
           </button>
         </slot>
         <p class="error">${this.error}</p>
@@ -80,7 +84,8 @@ export class LoginFormElement extends LitElement {
         body: JSON.stringify(this.formData)
       })
         .then((res) => {
-          if (res.status !== 200) throw "Login failed";
+          if (res.status === 409) throw "User already exists";
+          else if (res.status !== 200 && res.status !== 201) throw "Authentication failed";
           else return res.json();
         })
         .then((json: object) => {
