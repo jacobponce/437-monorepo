@@ -13,6 +13,7 @@ import { AppHeaderElement } from "./components/app-header";
 import { FeatureCardElement } from "./components/feature-card";
 import { FeatureGridElement } from "./components/feature-grid";
 import { ClubListingFormElement } from "./components/club-listing-form";
+import { AuctionFormElement } from "./components/auction-form";
 import { CommentFormElement } from "./components/comment-form";
 
 import { HomeViewElement } from "./views/home-view";
@@ -109,6 +110,7 @@ define({
   "feature-card": FeatureCardElement,
   "feature-grid": FeatureGridElement,
   "club-listing-form": ClubListingFormElement,
+  "auction-form": AuctionFormElement,
   "comment-form": CommentFormElement,
   "home-view": HomeViewElement,
   "marketplace-view": MarketplaceViewElement,
